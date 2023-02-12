@@ -11,10 +11,6 @@ import GameplayKit
 import AVFoundation
 import UIKit
 
-let screenSize = UIScreen.main.bounds
-var screenWidth: CGFloat?
-var screenHeight: CGFloat?
-
 class GameScene: SKScene
 {
     // instance variables
@@ -26,11 +22,6 @@ class GameScene: SKScene
     
     override func sceneDidLoad()
     {
-        screenWidth = frame.width
-        screenHeight = frame.height
-        print("Screen Width: \(String(describing: screenWidth))")
-        print("Screen Height: \(String(describing: screenHeight))")
-        
         name = "GAME"
         
         // add the first ocean to the Scene
@@ -64,6 +55,7 @@ class GameScene: SKScene
         addChild(engineSound)
         engineSound.autoplayLooped = true
         engineSound.run(SKAction.changeVolume(to: 0.5, duration: 0))
+
         
         
         // preload / prewarm impulse sounds
@@ -82,7 +74,7 @@ class GameScene: SKScene
 //        {
 //
 //        }
-   }
+    }
     
     func touchDown(atPoint pos : CGPoint)
     {
